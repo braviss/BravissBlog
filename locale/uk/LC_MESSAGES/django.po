@@ -1,0 +1,140 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-03-26 16:47+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n % 1 == 0 && n % 10 == 1 && n % 100 != "
+"11 ? 0 : n % 1 == 0 && n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % "
+"100 > 14) ? 1 : n % 1 == 0 && (n % 10 ==0 || (n % 10 >=5 && n % 10 <=9) || "
+"(n % 100 >=11 && n % 100 <=14 )) ? 2: 3);\n"
+
+#: blog/models.py:36
+#, fuzzy
+#| msgid "Articles"
+msgid "Article"
+msgstr "Публікації"
+
+#: blog/models.py:37
+msgid "Page"
+msgstr "Сторінка"
+
+#: blog/models.py:40
+msgid "Title"
+msgstr "Заголовок"
+
+#: templates/article_list.html:12
+msgid "Create"
+msgstr "Створити"
+
+#: templates/article_list.html:36
+msgid "Pending"
+msgstr "Очікування"
+
+#: templates/article_list.html:40
+msgid "View"
+msgstr "Переглянути"
+
+#: templates/base.html:49
+msgid "Home"
+msgstr "Головна"
+
+#: templates/base.html:52 templates/base_2.html:63
+msgid "Articles"
+msgstr "Публікації"
+
+#: templates/base.html:55 templates/base_2.html:66
+msgid "Tasks"
+msgstr "Завдання"
+
+#: templates/base.html:70 templates/base_2.html:81
+msgid "Profile"
+msgstr "Профіль"
+
+#: templates/base.html:76 templates/base_2.html:87
+msgid "Balance"
+msgstr "Баланс"
+
+#: templates/base.html:81 templates/base_2.html:92
+msgid "My article"
+msgstr "Мої публікації"
+
+#: templates/base.html:96 templates/base_2.html:105
+msgid "Logout"
+msgstr "Вийти"
+
+#: templates/base.html:104 templates/base_2.html:113
+msgid "Login"
+msgstr "Увійти"
+
+#: templates/base.html:105 templates/base_2.html:117
+msgid "Register"
+msgstr "Реєстрація"
+
+#: templates/base_2.html:66
+msgid "soon"
+msgstr "згодом"
+
+#: templates/password_reset_complete.html:7
+msgid "Password Reset Complete"
+msgstr ""
+
+#: templates/password_reset_complete.html:8
+msgid "Your password has been set. You may go ahead and log in now."
+msgstr ""
+
+#: templates/password_reset_complete.html:9
+msgid "Log in"
+msgstr ""
+
+#: templates/password_reset_confirm.html:7
+msgid "Enter New Password"
+msgstr ""
+
+#: templates/password_reset_confirm.html:14
+msgid "Reset my password"
+msgstr ""
+
+#: templates/password_reset_done.html:7
+msgid "Password Reset Sent"
+msgstr ""
+
+#: templates/password_reset_done.html:8
+msgid ""
+"We've emailed you instructions for setting your password, if an account "
+"exists with the email you entered. You should receive them shortly."
+msgstr ""
+
+#: templates/password_reset_done.html:9
+msgid ""
+"If you don't receive an email, please make sure you've entered the address "
+"you registered with, and check your spam folder."
+msgstr ""
+
+#: templates/password_reset_form.html:7
+msgid "Password Reset"
+msgstr ""
+
+#: templates/password_reset_form.html:8
+msgid ""
+"Enter your email address and we will send you a link to reset your password."
+msgstr ""
+
+#: templates/password_reset_form.html:13
+msgid "Send"
+msgstr "Відправити"
+
+#~ msgid "Change Language"
+#~ msgstr "Змінити мову"

@@ -1,0 +1,14 @@
+{% extends 'base_2.html' %}
+
+{% block title %}Home{% endblock title %}
+
+{% block content %}
+    <div class="jumbotron">
+        <h1 class="display-4">Welcome!</h1>
+        <p class="lead">This is a simple home page for the ADearn application.</p>
+        <hr class="my-4">
+        <p class="lead">
+            <a class="btn btn-dark" href="{% url 'blog:article_list' %}" role="button">Article List</a>
+        </p>
+    </div>
+{% endblock content %}

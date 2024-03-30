@@ -1,0 +1,69 @@
+{% extends 'base_2.html' %}
+{% load i18n %}
+
+
+{% block title %}Article List{% endblock title %}
+
+{% block page_title %}
+    Articles
+    <a href="{% url 'blog:article_create' %}"
+       class="btn btn-primary float-right">{% trans 'Create' %}</a>
+{% endblock %}
+
+{% block content %}
+
+
+
+    {# Article card #}
+    <div class="row">
+        {% for article in articles %}
+            <div class="col-md-12">
+                <div class="card mb-4 box-shadow">
+                    <span class="position-absolute text-dark px-2 rounded bg-light"
+                          style="top:10px;right:10px;">{{ article.created_at|date:"d.m.Y" }}</span>
+                    <img class="card-img-top" src="{{ article.image.url }}" alt="{{ article.title }}">
+                    <div class="card-body mt-2">
+                        <h5 class="card-title">{{ article.title }}</h5>
+                        <p class="card-text">{{ article.body|truncatewords:20|safe }}</p>
+                        <p class="card-text"><small class="text-muted"><a
+                                href="{% url 'blog:user_articles' article.author %}">{{ article.author.username }}</a> |
+                            <i
+                                    class="bi bi-eye"></i> {{ article.views }}</small></p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="btn-group">
+                                {% if article.status == "pe" %}
+                                    <span href="" class="btn btn-secondary mb-0 float-right">{% trans 'Pending' %} <i
+                                            class="bi bi-stopwatch"></i></span>
+                                {% else %}
+                                    <a href="{% url 'blog:article_detail' article.slug %}"
+                                       class="btn btn-primary float-right">{% trans 'View' %}</a>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+    {# Pagination navigation #}
+    <nav aria-label="Page navigation example mx-auto">
+        <ul class="pagination justify-content-center">
+            {% if page_obj.has_previous %}
+                <li class="page-item"><a href="?page=1" class="page-link">&laquo; Перша</a></li>
+                <li class="page-item"><a href="?page={{ page_obj.previous_page_number }}"
+                                         class="page-link">Попередня</a></li>
+            {% endif %}
+            <li class="page-item">
+                <span class="page-link">
+                    Сторінка {{ page_obj.number }} / {{ page_obj.paginator.num_pages }}
+                </span>
+            </li>
+            {% if page_obj.has_next %}
+                <li class="page-item"><a href="?page={{ page_obj.next_page_number }}" class="page-link">Наступна</a>
+                </li>
+                <li class="page-item"><a href="?page={{ page_obj.paginator.num_pages }}" class="page-link">Остання
+                    &raquo;</a></li>
+            {% endif %}
+        </ul>
+    </nav>
+{% endblock %}

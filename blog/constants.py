@@ -1,0 +1,1 @@
+PRICE_OF_POST = 10.0

@@ -1,0 +1,60 @@
+{% extends "base_2.html" %}
+
+{% block title %}Create article{% endblock title %}
+
+{% block content %}
+    <form method="post" class="form" enctype="multipart/form-data">
+        {% csrf_token %}
+
+        <div class="form-group">
+            <label for="{{ form.category.id_for_label }}">Category:</label>
+            <select class="form-control" id="{{ form.category.id_for_label }}" name="{{ form.category.name }}">
+                {% for choice in form.category.field.choices %}
+                    <option value="{{ choice.0 }}" {% if form.category.value == choice.0 %} selected {% endif %}>
+                        {{ choice.1 }}
+                    </option>
+                {% endfor %}
+            </select>
+            {% if form.category.errors %}
+                <div class="text-danger">
+                    {{ form.category.errors.0 }}
+                </div>
+            {% endif %}
+        </div>
+
+
+        <div class="form-group">
+            <input type="text" class="form-control" placeholder="Title" id="{{ form.title.id_for_label }}"
+                   name="{{ form.title.name }}"
+                   value="{{ form.title.value|default:'' }}">
+            {% if form.title.errors %}
+                <div class="text-danger">
+                    {{ form.title.errors.0 }}
+                </div>
+            {% endif %}
+        </div>
+        <div class="form-group">
+            {{ form.body }}
+
+            {% if form.body.errors %}
+                <div class="text-danger">
+                    {{ form.body.errors.0 }}
+                </div>
+            {% endif %}
+        </div>
+        <div class="form-group">
+            <input type="file" class="form-control" id="{{ form.image.id_for_label }}" name="{{ form.image.name }}"
+                   accept="image/*">
+            {% if form.image.errors %}
+                <div class="text-danger">
+                    {{ form.image.errors.0 }}
+                </div>
+            {% endif %}
+        </div>
+
+        <div class="form-group mt-3">
+            <button type="submit" class="btn btn-primary">Save</button>
+            <a href="{% url 'blog:article_list' %}" class="btn btn-dark">Back</a>
+        </div>
+    </form>
+{% endblock %}

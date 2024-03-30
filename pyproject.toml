@@ -1,0 +1,27 @@
+[tool.poetry]
+name = "bravissblog"
+version = "0.1.0"
+description = ""
+authors = ["braviss <doctype.developer@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+django = "^5.0.1"
+docutils = "^0.20.1"
+flake8 = "^7.0.0"
+django-tinymce = "^3.6.1"
+ruff = "^0.1.14"
+django-modeltranslation = "^0.18.11"
+pillow = "^10.2.0"
+django-view-breadcrumbs = "^2.5.1"
+django-recaptcha = "^4.0.0"
+factory-boy = "^3.3.0"
+coverage = "^7.4.3"
+django-social-share = "^2.3.0"
+transliterate = "^1.10.2"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

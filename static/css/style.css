@@ -1,0 +1,10 @@
+@font-face {
+  font-family: "e-Ukraine-Regular";
+  src: url("../fonts/e-Ukraine-Regular.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+body {
+  background-color: #f1f1f1;
+  font-family: "e-Ukraine-Regular", sans-serif !important;
+}

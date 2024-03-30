@@ -1,0 +1,50 @@
+{% extends "base_2.html" %}
+
+{% block title %}{{ object.username }}{% endblock title %}
+
+{% block page_title %}
+    Profile
+{% endblock %}
+
+{% block content %}
+    <div class="card p-3 py-4 mt-4">
+        <div class="text-center">
+            <img src="{{ object.avatar.url }}" width="100" height="100" class="rounded-circle">
+        </div>
+        <div class="text-center mt-3">
+            <span class="bg-secondary p-1 px-4 rounded text-white">Status [soon]</span>
+            <h5 class="mt-2 mb-0">{{ object.username }}</h5>
+
+            <div class="buttons mt-4">
+                <button class="btn btn-primary px-4 ms-3">Edit accounts</button>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        var username = "{{ user.username }}";
+        var hasAvatar = "{{ user.has_avatar }}";
+
+        function getRandomColor() {
+            var letters = '0123456789ABCDEF';
+            var color = '#';
+            for (var i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+
+        function createAvatar(username) {
+            var firstLetter = username.charAt(0).toUpperCase();
+            var color = getRandomColor();
+            var avatarHTML = '<div class="avatar" style="background-color: ' + color + ';">' + firstLetter + '</div>';
+            return avatarHTML;
+        }
+
+        if (!hasAvatar) {
+            var avatarContainer = document.querySelector('.user-avatar');
+            avatarContainer.innerHTML = createAvatar(username);
+        }
+    </script>
+{% endblock %}

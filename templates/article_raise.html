@@ -1,0 +1,37 @@
+{% extends 'base_2.html' %}
+
+{% block title %}Raise{% endblock title %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-md-6">
+            <div class="row mb-2">
+
+                <div class="col-md-6">
+                    <form method="post" action="{% url 'blog:update_publish_date' slug=article.slug %}">
+                        {% csrf_token %}
+                        <button type="submit" class="btn btn-primary btn-lg btn-block">Up!</button>
+                    </form>
+                </div>
+                <div class="col-md-6">
+                    <a href="" class="btn btn-primary btn-lg btn-block">Fixed</a>
+                </div>
+            </div>
+            <div class="btn btn-outline-primary btn-lg btn-block mb-2">
+                Position: {{ position }}/{{ total_articles }}
+            </div>
+            <div class="btn btn-outline-primary btn-lg btn-block">
+                Views: {{ article.views }}
+            </div>
+
+
+        </div>
+        <div class="col-md-6">
+            <img class="card-img-top" src="{{ article.image.url }}" alt="Card image cap">
+            <div class="mt-2">
+                <h5 class="card-title">{{ article.title }}</h5>
+                <p class="card-text">{{ article.body|truncatewords:20|safe }}</p>
+            </div>
+        </div>
+    </div>
+{% endblock content %}
